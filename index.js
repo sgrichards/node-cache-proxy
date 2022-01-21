@@ -46,6 +46,9 @@ app
             debug: CACHE_DEBUG,
             statusCode: {
                 include: [200]
+            },
+            headers: {
+                'accept-encoding': 'gzip,deflate'
             }
         })
         next()
