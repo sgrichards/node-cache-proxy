@@ -8,7 +8,6 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 
 // Configuration
 const PORT = process.env.PORT
-const HOST = process.env.HOST
 const API_SERVICE_URL = process.env.API_SERVICE_URL
 const CACHE_DURATION = process.env.CACHE_DURATION
 const CACHE_DEBUG = process.env.CACHE_DEBUG
@@ -60,6 +59,6 @@ app.use('*', createProxyMiddleware({
     changeOrigin: true
 }));
 
-app.listen(PORT, HOST, () => {
-    console.log(`Starting Proxy at ${HOST}:${PORT}`)
+app.listen(PORT, () => {
+    console.log(`Listening on port:${PORT}`)
 });
